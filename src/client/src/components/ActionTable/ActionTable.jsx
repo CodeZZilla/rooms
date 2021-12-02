@@ -1,0 +1,52 @@
+import MaterialTable from "material-table";
+import '@material-ui/icons'
+import {createMuiTheme, MuiThemeProvider} from "@material-ui/core";
+
+export default function ActionTable(props) {
+    const columns = [
+        {title: 'ID Телеграму', field: 'idTelegram'},
+        {title: 'Фамілія', field: 'surname'},
+        {title: "Імя", field: 'name'},
+        {title: "К-сть днів до оновлення підписки", field: 'lessDays'},
+        {title: 'Дата регестрації', field: 'date'},
+        {title: 'Отримано квартир', field: 'rooms'},
+        {title: 'Етап', field: 'stage'},
+    ]
+
+    const theme = createMuiTheme({
+        palette: {
+            primary: {
+                main: '#00DA42',
+            },
+            secondary: {
+                main: '#00DA42',
+            },
+        },
+
+    });
+
+    return (
+        <MuiThemeProvider theme={theme}>
+            <MaterialTable columns={columns} data={props.data} options={props.options} title={props.title} actions={props.action}
+                           localization={{
+                               pagination: {
+                                   labelDisplayedRows: '{from}-{to} з {count}',
+                                   labelRowsSelect: 'запісів показано',
+                                   nextTooltip: 'Вперед',
+                                   previousTooltip: 'Назад',
+                                   lastTooltip: 'Кінець',
+                                   firstTooltip: 'Початок'
+                               },
+                               toolbar: {
+                                   nRowsSelected: '{0} користувачів вибранно',
+                                   searchTooltip: 'Пошук',
+                                   searchPlaceholder: 'Пошук'
+                               },
+                               body: {
+                                   emptyDataSourceMessage: 'Дані про користувачів відсутні'
+                               }
+                           }}/>
+        </MuiThemeProvider>
+
+    )
+}
