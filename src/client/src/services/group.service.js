@@ -1,7 +1,7 @@
 import authHeader from "./auth-header";
 import axios from "axios";
 
-const API_URL = 'http://localhost:8080/api/group';
+const API_URL = 'http://auth0.localhost:8080/api/group';
 
 class GroupService {
     getGroups() {
