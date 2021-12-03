@@ -1,6 +1,6 @@
 import MaterialTable from "material-table";
 import '@material-ui/icons'
-import {createMuiTheme, MuiThemeProvider} from "@material-ui/core";
+import {createTheme, MuiThemeProvider} from "@material-ui/core";
 
 export default function ActionTable(props) {
     const columns = [
@@ -13,13 +13,13 @@ export default function ActionTable(props) {
         {title: 'Етап', field: 'stage'},
     ]
 
-    const theme = createMuiTheme({
+    const theme = createTheme({
         palette: {
             primary: {
-                main: '#00DA42',
+                main: '#000000',
             },
             secondary: {
-                main: '#00DA42',
+                main: '#000000',
             },
         },
 

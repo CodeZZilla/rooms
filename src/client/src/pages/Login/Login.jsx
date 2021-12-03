@@ -13,11 +13,11 @@ export default function Login(props) {
 
 
     function onChangeUsername(e) {
-        setUsername(e.target.value);
+        setUsername(e.target.value.trim());
     }
 
     function onChangePassword(e) {
-        setPassword(e.target.value);
+        setPassword(e.target.value.trim());
     }
 
     function submit(e) {
@@ -25,14 +25,8 @@ export default function Login(props) {
 
         AuthService.login(username, password).then(() => {
             props.history.push('/');
-        }, error => {
-            const resMessage =
-                (error.response &&
-                    error.response.data &&
-                    error.response.data.message) ||
-                error.message ||
-                error.toString();
-            setMessage(resMessage);
+        }, () => {
+            setMessage('Невірні дані для входу у систему');
         });
 
     }
@@ -44,7 +38,7 @@ export default function Login(props) {
                 <div className="col-lg-5 col-12">
                     <div id="auth-left">
                         <div className="auth-logo">
-                            <img src="assets/images/logo/logo.png" alt="Logo"/>
+                            <img src="assets/images/logo/logo.png" alt="Logo" />
                         </div>
                         <h1 className="auth-title">Система керуванням Rooms Bot.</h1>
                         <p className="auth-subtitle mb-5">Увійдіть у свій обліковий запис.</p>
@@ -55,14 +49,14 @@ export default function Login(props) {
                         </div>)}
                         <form onSubmit={submit}>
                             <div className="form-group position-relative has-icon-left mb-4">
-                                <input type="text" className="form-control form-control-xl" placeholder="Username"
+                                <input type="text" className="form-control form-control-xl" placeholder="Логін"
                                        onChange={onChangeUsername} value={username}/>
                                 <div className="form-control-icon">
                                     <i className="bi bi-person"/>
                                 </div>
                             </div>
                             <div className="form-group position-relative has-icon-left mb-4">
-                                <input type="password" className="form-control form-control-xl" placeholder="Password"
+                                <input type="password" className="form-control form-control-xl" placeholder="Пароль"
                                        onChange={onChangePassword} value={password}/>
                                 <div className="form-control-icon">
                                     <i className="bi bi-shield-lock"/>

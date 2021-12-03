@@ -8,7 +8,7 @@ export default function SlideBar() {
 
 
     return (
-         <div id="sidebar" className="active">
+        <div id="sidebar" className="active">
             <div className="sidebar-wrapper active">
                 <div className="sidebar-header">
                     <div className="d-flex justify-content-between">
@@ -26,8 +26,8 @@ export default function SlideBar() {
                 <div className="sidebar-menu">
                     <ul className="menu">
                         <li className="sidebar-title">Меню</li>
-
-                        <li className="sidebar-item ">
+                        {/*className="sidebar-item active"*/}
+                        <li className='sidebar-item'>
                             <Link className='sidebar-link' to="/">
                                 <i className="bi bi-grid-fill"/>
                                 <span>Головна</span>

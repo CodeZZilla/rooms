@@ -9,10 +9,16 @@ import Kanban from "./pages/Kanban/Kanban";
 import Login from "./pages/Login/Login";
 import AuthComponent from "./components/AuthComponent/AuthComponent";
 import Container from "./hoc/container/Container";
+// import 'bootstrap/dist/css/bootstrap.css';
+// import './vendors/iconly/bold.css';
+// import './vendors/perfect-scrollbar/perfect-scrollbar.css';
+// import './vendors/bootstrap-icons/bootstrap-icons.css';
 
 // import 'bootstrap/dist/css/bootstrap.css'
 
 function App() {
+
+
     return (
         <Router>
             <Switch>

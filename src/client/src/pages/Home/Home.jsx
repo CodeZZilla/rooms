@@ -6,6 +6,8 @@ import UserService from '../../services/user.service'
 
 export default function Home() {
 
+
+
     const [dataStatistic, setDataStatistic] = useState([]);
     const [stagesStopped, setStagesStopped] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -210,7 +212,9 @@ export default function Home() {
                                     <div className="card-body py-4 px-5">
                                         <div className="d-flex align-items-center">
                                             <div className="avatar avatar-xl">
-                                                <img src="assets/images/faces/1.jpg" alt="Face 1"/>
+                                                <a href="https://t.me/rooms_rent_bot" target="_blank">
+                                                    <img src="assets/images/faces/1.jpg" alt="Face 1"/>
+                                                </a>
                                             </div>
                                             <div className="ms-3 name">
                                                 <h5 className="font-bold">ROOMS ADMIN</h5>
@@ -261,6 +265,64 @@ export default function Home() {
                                                 <div className="row">
                                                     <h5 className="col-6 mb-1">7 етап</h5>
                                                     <h5 className="col-6 mb-1 text-end ">{stagesStopped.seventhStage}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="px-4">
+                                            <button
+                                                className='btn btn-block btn-xl btn-light-primary font-bold mt-3' type="button" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalCenter">
+                                                Подивитись повну інформацію
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog"
+                                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div
+                                            className="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
+                                            role="document">
+                                            <div className="modal-content">
+                                                <div className="modal-header">
+                                                    <h5 className="modal-title" id="exampleModalCenterTitle">Повна
+                                                        інформація по етапах
+                                                    </h5>
+                                                    <button type="button" className="close" data-bs-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <i data-feather="x"></i>
+                                                    </button>
+                                                </div>
+                                                <div className="modal-body">
+                                                    <p>
+                                                        (0 етап) Етап при команді /start - к-сть юзерів які зупинились на цьому етапі {stagesStopped.zeroStage}
+                                                        <br/>
+                                                        <br/>
+                                                        (1 етап) Етап початку - к-сть юзерів які зупинились на цьому етапі {stagesStopped.firstStage}
+                                                        <br/>
+                                                        <br/>
+                                                        (2 етап) Етап вибору міста - к-сть юзерів які зупинились на цьому етапі {stagesStopped.secondStage}
+                                                        <br/>
+                                                        <br/>
+                                                        (3 етап) Етап вибору житла - к-сть юзерів які зупинились на цьому етапі {stagesStopped.thirdStage}
+                                                        <br/>
+                                                        <br/>
+                                                        (4 етап) Етап вибору типа житла - к-сть юзерів які зупинились на цьому етапі {stagesStopped.fourthStage}
+                                                        <br/>
+                                                        <br/>
+                                                        (5 етап) Етап вибору ціни - к-сть юзерів які зупинились на цьому етапі {stagesStopped.fifthStage}
+                                                        <br/>
+                                                        <br/>
+                                                        (6 етап) Етап вибору регіона - к-сть юзерів які зупинились на цьому етапі {stagesStopped.sixthStage}
+                                                        <br/>
+                                                        <br/>
+                                                        (7 етап) Етап вибору станції метро - к-сть юзерів які зупинились на цьому етапі {stagesStopped.seventhStage}
+                                                    </p>
+                                                </div>
+                                                <div className="modal-footer">
+                                                    <button type="button" className="btn btn-dark"
+                                                            data-bs-dismiss="modal">
+                                                        <i className="bx bx-x d-block d-sm-none"></i>
+                                                        <span className="d-none d-sm-block">Закрити</span>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>

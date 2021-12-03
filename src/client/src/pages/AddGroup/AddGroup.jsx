@@ -21,9 +21,9 @@ export default function AddGroup() {
                     label: `${user.idTelegram} ${user.lastName === undefined ? "" : user.lastName} ${user.name}`
                 })
             }
+            setIsLoading(false);
         });
         setOptions(u)
-        setIsLoading(false)
     }, [])
 
     const handlerClick = (e) => {

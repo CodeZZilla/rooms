@@ -1,8 +1,6 @@
 import {useEffect, useState} from "react";
-import axios from "axios";
 import {BarWave} from "react-cssfx-loading";
 import ActionTable from "../../components/ActionTable/ActionTable";
-import Container from "../../hoc/container/Container";
 import UserService from "../../services/user.service";
 
 export default function Users() {
@@ -16,13 +14,18 @@ export default function Users() {
         UserService.getUsers().then(response => {
             let u = [];
             for (let i = 0; i < response.data.length; i++) {
+                let date = new Date(response.data[i].creationDate);
+                let dateString = ("0" + date.getDate()).slice(-2) + "." + ("0"+(date.getMonth()+1)).slice(-2) + "." +
+                    date.getFullYear();
+
+
                 u.push({
                     id: response.data[i].id,
                     idTelegram: response.data[i].idTelegram,
                     surname: response.data[i].lastName,
                     name: response.data[i].name,
                     lessDays: response.data[i].daysOfSubscription,
-                    date: response.data[i].creationDate,
+                    date: dateString,
                     rooms: response.data[i].todayCompilation.length,
                     stage: response.data[i].userStatus
                 })
