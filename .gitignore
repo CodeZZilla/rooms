@@ -19,7 +19,7 @@ target/
 *.iml
 *.ipr
 src/client/node_modules
-
+src/client/.idea
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
